@@ -19,6 +19,10 @@ repositories {
 }
 
 dependencies {
+    //QueryDSL
+    implementation("io.github.openfeign.querydsl:querydsl-jpa:7.4.0")
+    annotationProcessor("io.github.openfeign.querydsl:querydsl-apt:7.4.0:jpa")
+
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-h2console")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")

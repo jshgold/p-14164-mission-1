@@ -17,6 +17,10 @@ public class WiseSayingService {
         return wiseSayingRepository.findById(id);
     }
 
+    public WiseSaying findQById(int id) {
+        return wiseSayingRepository.findQById(id);
+    }
+
     public WiseSaying write(String content, String author) {
         WiseSaying wiseSaying = new WiseSaying(content, author);
 
@@ -27,6 +31,10 @@ public class WiseSayingService {
 
     public List<WiseSaying> findAll() {
         return wiseSayingRepository.findAll();
+    }
+
+    public List<WiseSaying> findQAll() {
+        return wiseSayingRepository.findQAll();
     }
 
     public void modify(WiseSaying wiseSaying, String content, String author) {
@@ -41,5 +49,9 @@ public class WiseSayingService {
 
     public long count() {
         return wiseSayingRepository.count();
+    }
+
+    public long qCount() {
+        return wiseSayingRepository.qCount();
     }
 }

@@ -45,7 +45,7 @@ public class WiseSayingController {
                 +
                 "<ul>"
                 +
-                wiseSayingService.findAll()
+                wiseSayingService.findQAll()
                         .stream()
                         .map(wiseSaying -> "<li>%d / %s / %s</li>".formatted(wiseSaying.getId(), wiseSaying.getAuthor(), wiseSaying.getContent()))
                         .collect(Collectors.joining("\n"))
@@ -56,7 +56,8 @@ public class WiseSayingController {
     @GetMapping("/wiseSayings/{id}")
     @ResponseBody
     public String detail(@PathVariable int id) {
-        WiseSaying wiseSaying = wiseSayingService.findById(id).get();
+//        WiseSaying wiseSaying = wiseSayingService.findById(id).get();
+        WiseSaying wiseSaying = wiseSayingService.findQById(id);
 
         String html = markdownService.toHtml(wiseSaying.getContent());
 

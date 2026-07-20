@@ -12,9 +12,11 @@ import java.util.Optional;
 public class MemberService {
     private final MemberRepository memberRepository;
 
+
     public long count() {
         return memberRepository.count();
     }
+
 
     public Member join(String username, String password, String nickname) {
         return memberRepository.save(
@@ -24,5 +26,13 @@ public class MemberService {
 
     public Optional<Member> findByUsername(String username) {
         return memberRepository.findByUsername(username);
+    }
+
+    public long qCount() {
+        return memberRepository.qCount();
+    }
+
+    public Member findQByUsername(String username) {
+        return memberRepository.findQByUsername(username);
     }
 }
